@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "team1-stock-market"
+version = "0.1.0"
+description = ""
+authors = ["Collin"]
+readme = "README.md"
+packages = [
+    { include = "ui", from ="."}
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+numpy = "^2.2.3"
+matplotlib = "^3.10.1"
+seaborn = "^0.13.2"
+dateparser = "^1.2.1"
+pandas = "^2.2.3"
+quart = "^0.20.0"
+beautifulsoup4 = "^4.13.3"
+
+asyncio = "^3.4.3"
+aiohttp = "^3.11.16"
+python-dotenv = "^1.1.0"
+
+
+[tool.coverage.run]
+omit = ["tests/*"]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+black = "^25.1.0"
+pytest-asyncio = "^0.26.0"
+pytest-cov = "^6.1.1"
+aioresponses = "^0.7.8"
+
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
